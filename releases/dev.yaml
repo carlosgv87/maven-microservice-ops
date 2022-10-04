@@ -1,0 +1,26 @@
+microservice-helm-chart:
+  namespace: sandbox
+  deployment:
+    aws:
+      role:
+        name: SandboxMavenMicroserviceRole
+  app:
+    name: maven-microservice
+    version: 1.0.0-SNAPSHOT
+  summon:
+    enabled: true
+  config:
+    cbs:
+      enabled: true
+    database:
+      enabled: true
+    kafka:
+      enabled: false
+    s3:
+      enabled: false
+    security:
+      enabled: true
+    custom:
+      enabled: true
+      values:
+        DEPLOY: "true"
